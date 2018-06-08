@@ -1,0 +1,57 @@
+ATOI(3)                          Linux Programmer's Manual                          ATOI(3)
+
+[1mNAME[0m
+       atoi, atol, atoll - convert a string to an integer
+
+[1mSYNOPSIS[0m
+       [1m#include <stdlib.h>[0m
+
+       [1mint atoi(const char *[4m[22mnptr[24m[1m);[0m
+       [1mlong atol(const char *[4m[22mnptr[24m[1m);[0m
+       [1mlong long atoll(const char *[4m[22mnptr[24m[1m);[0m
+
+   Feature Test Macro Requirements for glibc (see [1mfeature_test_macros[22m(7)):
+
+       [1matoll[22m():
+           __ISOC99_SOURCE ||
+               || /* Glibc versions <= 2.19: */ _BSD_SOURCE || _SVID_SOURCE
+
+[1mDESCRIPTION[0m
+       The [1matoi[22m() function converts the initial portion of the string pointed to by [4mnptr[24m to
+       [4mint[24m.  The behavior is the same as
+
+           strtol(nptr, NULL, 10);
+
+       except that [1matoi[22m() does not detect errors.
+
+       The [1matol[22m() and [1matoll[22m() functions behave the same as [1matoi[22m(), except that they convert
+       the initial portion of the string to their return type of [4mlong[24m or [4mlong[24m [4mlong[24m.
+
+[1mRETURN VALUE[0m
+       The converted value.
+
+[1mATTRIBUTES[0m
+       For an explanation of the terms used in this section, see [1mattributes[22m(7).
+
+       ┌────────────────────────┬───────────────┬────────────────┐
+       │[1mInterface               [22m│ [1mAttribute     [22m│ [1mValue          [22m│
+       ├────────────────────────┼───────────────┼────────────────┤
+       │[1matoi[22m(), [1matol[22m(), [1matoll[22m() │ Thread safety │ MT-Safe locale │
+       └────────────────────────┴───────────────┴────────────────┘
+[1mCONFORMING TO[0m
+       POSIX.1-2001,  POSIX.1-2008,  C99,  SVr4,  4.3BSD.  C89 and POSIX.1-1996 include the
+       functions [1matoi[22m() and [1matol[22m() only.
+
+[1mNOTES[0m
+       Linux libc provided [1matoq[22m() as an obsolete name for [1matoll[22m(); [1matoq[22m() is  not  provided
+       by glibc.
+
+[1mSEE ALSO[0m
+       [1matof[22m(3), [1mstrtod[22m(3), [1mstrtol[22m(3), [1mstrtoul[22m(3)
+
+[1mCOLOPHON[0m
+       This  page is part of release 4.12 of the Linux [4mman-pages[24m project.  A description of
+       the project, information about reporting bugs, and the latest version of this  page,
+       can be found at https://www.kernel.org/doc/man-pages/.
+
+GNU                                      2016-03-15                                 ATOI(3)

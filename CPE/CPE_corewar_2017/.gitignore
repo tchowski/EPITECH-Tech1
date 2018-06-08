@@ -1,0 +1,6 @@
+src/lib/*.o
+src/asm/*.o
+src/vm/*.o
+corewar/corewar
+asm/asm
+*.cor
